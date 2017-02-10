@@ -3,7 +3,7 @@ box: golang
 dev:
   steps:
     - setup-go-workspace:
-        package-dir: github.com/cloudnativego/hello
+      package-dir: github.com/bawdo/go-react-study
 
     - script:
         name: env
@@ -25,7 +25,7 @@ dev:
 build:
   steps:
     - setup-go-workspace:
-        package-dir: github.com/cloudnativego/hello
+      package-dir: github.com/bawdo/go-react-study
 
     - script:
         name: env
