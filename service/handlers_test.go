@@ -31,7 +31,6 @@ func TestCreateMatch(t *testing.T){
 	}
 
 	req.Header.Add("Content-Type", "application/json")
-	
 	res, err := client.Do(req)
 
 	if err != nil {
@@ -48,6 +47,10 @@ func TestCreateMatch(t *testing.T){
 
 	if res.StatusCode != http.StatusCreated {
 		t.Errorf("Expected response status 201, recieved %s", res.Status)
+	}
+
+	if _, ok := res.Header["Location"]; !ok {
+		t.Error("Location header is not set")
 	}
 
 	fmt.Printf("Payload: %s", string(payload))
